@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SNC_Authantication.master.cs" Inherits="SNC.MasterPage.SNC_Authantication" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>UGCL</title>
+
+    <link href="../Style/bootstrap-3.3.0/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Style/SNC_accordion.css" rel="stylesheet" />
+
+    <link href="../Style/css/sb-admin.css" rel="stylesheet" />
+
+    <!-[if lt IE 9]->
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="../Style/SNC_theme.css" rel="stylesheet" />
+    <link href="../Style/SNC_menubar.css" rel="stylesheet" />
+    <script src="../Style/js/jquery-1.11.1.min.js"></script>
+    <script src="../Style/js/SNC_master.js"></script>
+        <script src="../Style/js/tomaster.js"></script>
+    <style>
+        li span {
+            padding-left: 5px;
+        }
+
+        .dropdown > ul {
+            _box-shadow: 0px 0px 10px gray inset;
+            color: #9b111e;
+        }
+
+        .input-group .form-control {
+       width:95%;
+       }
+    </style>
+    <style>
+        .rounddiv1 {
+            border-radius: 20px;
+            width: 320px;
+            min-height: 320px;
+            box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.35);
+            padding: 5px;
+        }
+
+        .rounddiv2 {
+            border-radius: 20px;
+            width: 310px;
+            min-height: 310px;
+            box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.35) inset;
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .autheading {
+            color: #9e121b;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: JasmineUPC;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+        <div>
+            <div id="dialogboxhead"></div>
+            <div id="dialogboxbody"></div>
+            <div id="dialogboxfoot"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="dialogoverlay1"></div>
+    <div id="dialogbox1">
+        <div>
+            <div id="dialogboxhead1"></div>
+            <div id="dialogboxbody1"></div>
+            <div id="dialogboxfoot1"></div>
+        </div>
+    </div>
+
+
+
+    <div id="dialogoverlay2"></div>
+    <div id="dialogbox2">
+        <div>
+            <div id="dialogboxhead2"></div>
+            <div id="dialogboxbody2"></div>
+            <div id="dialogboxfoot2"></div>
+        </div>
+    </div>
+    <form id="form1" runat="server">
+        <div >
+
+            <!-- Navigation -->
+            <nav class="navbar  navbar-fixed-top headerpart " role="navigation">
+
+
+                <ul class="nav navbar-right top-nav">
+                  
+                    <%--<li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>
+
+                        </a>
+                     
+                    </li>--%>
+                </ul>
+
+               
+                
+            </nav>
+
+
+                <div style="min-height: 530px; padding: 0px 22px;">
+                    <br />
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+
+        </div>
+        <footer>
+            <hr />
+            &copy; 2021 United Global Corporation Limited. Developed by <a href="http://simpro.co.in/" target="_blank">Simpro Business Solutions Pvt Ltd.</a>
+        </footer>
+    </form>
+
+
+    <script src="../Style/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+
+    <script src="../Style/js/bootstrap.min.js"></script>
+    <!-- Morris Charts JavaScript -->
+
+    <script src="../Style/js/plugins/morris/raphael.min.js"></script>
+    <script src="../Style/js/plugins/morris/morris.min.js"></script>
+    <script src="../Style/js/plugins/morris/morris-data.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SNC_Print.master.cs" Inherits="SNC.MasterPage.SNC_Print" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>UGCL Print</title>
+    <link href="../Style/bootstrap-3.3.0/dist/css/bootstrap.css" rel="stylesheet" />
+    <style>
+        table {
+            width:825px;
+            border:1px solid black;
+        }
+    
+        td {
+            text-align:left;
+            font-family:Arial;
+            font-size:12px;border:1px solid black;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <br /> <br />
+        <center>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+       </center>
+    </div>
+    </form>
+</body>
+</html>

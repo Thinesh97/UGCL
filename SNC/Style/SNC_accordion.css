@@ -1,0 +1,49 @@
+﻿.accordionContent {
+background-color: #ffffff;
+border-color: -moz-use-text-color #2F4F4F #2F4F4F;
+border:1px solid #dddddd;
+padding: 10px 5px 5px ;
+width:100%;
+_margin-left:15%;
+font-size: 12px;
+font-family:arial;
+}
+.accordionHeaderSelected {
+background-color: #e7e5e5;
+border: 1px solid #dddddd;
+color: #000000;
+cursor: pointer;
+font-family:Arial;
+font-size: 14px;
+font-weight: bold;
+margin-top: 5px;
+padding: 5px;
+width:100%;
+_margin-left:15%;
+}
+.accordionHeader {
+background-color: #f7f7f7;
+border: 1px solid #dddddd;
+color:#000000;
+cursor: pointer;
+font-family:Arial;
+font-size: 13px;
+font-weight: bold;
+margin-top: 5px;
+padding: 5px;
+width:100%;
+_margin-left:15%;
+}
+.href
+{
+color:White; 
+font-weight:bold;
+text-decoration:none;
+}
+.accordionwidth {
+width:100%;
+}
+body {
+font-size:12px;
+font-family:Arial;
+}

@@ -1,0 +1,530 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="~/MasterPage/SNC.master.cs" Inherits="SNC.MasterPage.SNC" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>UGCL</title>
+
+    <link href="../Style/bootstrap-3.3.0/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="../Style/SNC_accordion.css" rel="stylesheet" />
+
+    <link href="../Style/css/sb-admin.css" rel="stylesheet" />
+
+  
+    <link href="../Style/SNC_theme.css" rel="stylesheet" />
+    <link href="../Style/SNC_menubar.css" rel="stylesheet" />
+    <link href="../Style/chosen.css" rel="stylesheet" />
+    <script src="../Style/js/jquery-1.11.1.min.js"></script>
+    <script src="../Style/js/SNC_master.js"></script>
+    <script src="../Style/js/tomaster.js"></script>
+
+    <link href="../stylesheets/chosen.css" rel="stylesheet" />
+    <script src="../Js/chosen.jquery.js"></script>
+     <link href="docsupport/style.css" rel="stylesheet" />
+<link href="chosen.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.js"></script>
+<script src="chosen.jquery.js"></script>
+    <style>
+          .navbar-toggle .icon-bar {
+        background:black
+        }
+       
+        li span {
+            padding-left: 5px;
+        }
+        .navbar-toggle .icon-bar {
+        background:black
+        }
+        .dropdown > ul {
+            _box-shadow: 0px 0px 10px gray inset;
+            color: #9b111e;
+        }
+
+
+         .btn-warning {
+        border-radius:100%;
+        background:white;
+        color:black;
+        position:absolute;
+        top:-15px;
+        left:-15px;
+        box-shadow:0px 0px 3px black;
+        padding:5px 10px;
+        border:2px solid #9b111e;
+        }
+            .btn-warning :hover {
+            background:#9b111e;
+            color:white;
+            }
+             .no-js #loader { 
+            display: none; 
+        }
+        .js #loader { 
+            display: block;
+            position: absolute;
+            left: 100px; 
+            top: 0; 
+        }
+        .se-pre-con {
+	        position: fixed;
+	        left: 0px;
+	        top: 0px;
+	        width: 100%;
+	        height: 100%;
+	        z-index: 9999;
+	        background: url(../images/loading.gif) center no-repeat #fff;
+        }
+        .mylogo img {
+    margin-top: 0px;
+    height: 70px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="se-pre-con"></div>
+  
+    <script>
+        //paste this code under head tag or in a seperate js file.
+        // Wait for window load
+        $(window).load(function () {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+        });
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            $(".panel-title").css('display', 'none');
+            $(".panel-heading").css('width', '0px');
+            $(".panel-heading").animate({ width: '350px' }, "slow");
+            $(".panel-heading").slideDown("slow");
+            $(".panel-title").delay("slow").fadeIn();
+            //////////////////////////////////////////////
+            $("color1, .color2, .color3, .color4, .color5, .color6, .color7, .color8, .color9").css('display', 'none');
+            $(".color1").delay(200).fadeIn();
+            $(".color2").delay(400).fadeIn();
+            $(".color3").delay(600).fadeIn();
+            $(".color4").delay(800).fadeIn();
+            $(".color5").delay(1000).fadeIn();
+
+            $(".color7").delay(1200).fadeIn();
+            $(".color8").delay(1400).fadeIn();
+            $(".color6").delay(1600).fadeIn();
+            $(".color9").delay(1800).fadeIn();
+            // $(".img1").delay(2000).fadeIn();
+
+
+        });
+    </script>
+
+    <script type="text/javascript">
+        function allowOnlydecimalNumber(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode != 46 && charCode > 31
+                && (charCode < 48 || charCode > 57))
+                return false;
+
+            return true;
+        }
+
+        function allowOnlyNumber(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return false;
+            return true;
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        function LimtCharacters(txtMsg, CharLength, indicator) {
+            chars = txtMsg.value.length;
+            if ((CharLength - chars) >= 0) {
+                document.getElementById(indicator).innerHTML = CharLength - chars;
+            }
+            else {
+                document.getElementById(indicator).innerHTML = "Not Allowed";
+                alert("Maximum Character Limit Which is found in text box");
+            }
+            if (chars > CharLength) {
+                txtMsg.value = txtMsg.value.substring(0, CharLength);
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+
+            var url = window.location.href;
+
+            $('#menu ul  li  a').each(function () {
+
+                if (url == (this.href)) {
+
+
+
+                    $(this).closest('li').addClass('active');
+
+                    $(this).closest('li.mainitem').children('ul').slideDown();
+                    $(this).closest('.has-sub').children('ul').slideDown();
+
+                    $(this).parent('li .mainitem').children('ul').slideUp();
+
+
+                    $('li .mainitem').not(this).removeClass('active');
+
+
+
+                }
+            });
+
+        });
+    </script>
+
+    <div id="dialogoverlay"></div>
+    <div id="dialogbox">
+        <div>
+            <div id="dialogboxhead"></div>
+            <div id="dialogboxbody"></div>
+            <div id="dialogboxfoot"></div>
+        </div>
+    </div>
+
+    <div id="dialogoverlay1"></div>
+    <div id="dialogbox1">
+        <div>
+            <div id="dialogboxhead1"></div>
+            <div id="dialogboxbody1"></div>
+            <div id="dialogboxfoot1"></div>
+        </div>
+    </div>
+
+    <div id="dialogoverlay2"></div>
+    <div id="dialogbox2">
+        <div>
+            <div id="dialogboxhead2"></div>
+            <div id="dialogboxbody2"></div>
+            <div id="dialogboxfoot2"></div>
+        </div>
+    </div>
+
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <!-- Navigation -->
+            <nav class="navbar  navbar-fixed-top headerpart " role="navigation">
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header" style="height: 50px;">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"></a>
+                </div>
+                
+                <!-- Top Menu Items -->
+                <div style="width:8%;float:left;margin-top:13px;margin-left:-10px" runat="server" id="divProjectselection" visible="false"><b>Change Project</b></div>
+                 <div style="width:22%;float:left;margin-top:7px;margin-left:00px" runat="server" id="divProjectselection1" visible="false">
+                    <asp:DropDownList ID="ddlProjects" runat="server" CssClass="form-control" AutoPostBack="true" OnSelectedIndexChanged="ddlProjects_SelectedIndexChanged"></asp:DropDownList>                  
+                </div>
+
+                <ul class="nav navbar-right top-nav">                  
+                       <li class="dropdown" style="padding:5px 10px;">
+                            <asp:Label ID="txtUserName" runat="server"  Text=""></asp:Label>  
+                       </li>
+
+                       <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="../CommonPages/Change_Password.aspx"><i class="fa fa-fw fa-key"></i>Change Password</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <asp:LinkButton  runat="server" CssClass="fa fa-fw fa-power-off" ID="linkLogout" Text="Log Out" OnClick="linkLogout_Click" > </asp:LinkButton>
+                                    <%--<a href="../CommonPages/Login.aspx"><i class="fa fa-fw fa-power-off"></i>Log Out</a>--%>
+                                </li>
+                            </ul>
+                       </li>
+                </ul>
+
+                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+                <div class="collapse navbar-collapse navbar-ex1-collapse" style="padding: 10px;">
+
+                    <!-------------------------------menubar------------------------------------------->
+                    <div class="mylogo" style="text-align: center; _padding: 10px; padding-bottom: 20px; position: absolute; width: 240px;">
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                     
+                        <img src="../Style/Images/ugcl_logo1234.png" width="240px;" style="border: 1px solid #0087dc; border-radius: 10px; box-shadow: 0px 3px 16px rgba(0, 0, 0, 0.35); padding-top: 6px; background: white;" />
+                    </div>
+
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <div class='cssmenu' id="menu"  style="position: absolute;">
+
+
+                        <div style="_margin-left: 6px;">
+                            <img src="../Style/Images/menutop1.png" style="width: 240px; border-top-right-radius: 20px;" />
+                        </div>
+                        <ul style="padding: 8px;">
+                            <li class='mainitem'><a href="../CommonPages/Home.aspx"><i class="glyphicon glyphicon-home"></i><span>Home</span></a>
+                                <div class="item_footer"></div>
+                            </li>
+
+
+                            <li runat="server" class='has-sub mainitem'><a href='#'><i class="glyphicon glyphicon-user"></i><span>Admin</span></a>
+                                <ul>
+                                    <li runat="server" id="likUsers" visible="false"><a href="../Admin/UsersList.aspx"><span>Users </span></a></li>
+                                    <li runat="server" id="likEmployeeContract" visible="false"><a href="../Admin/EmployeeContractList.aspx"><span>Employee Contract</span></a></li>
+                                    <li runat="server" id="likMailconf" visible="false" ><a href="../Admin/MailSetup.aspx"><span>Mail Config</span></a></li>
+									 <li runat="server" id="likstaffSalary" visible="true" ><a href="../Admin/StaffSalariesList.aspx"><span>Staff Salaries</span></a></li>																																	 
+                                </ul>
+                                <div class="item_footer"></div>
+                            </li>
+                            <li runat="server" class='has-sub mainitem'><a href='#'><i class="glyphicon glyphicon-cog"></i><span>Master</span></a>
+
+                                <ul>
+                                    <li runat="server" id="likSite" visible="false"  ><a href="../Master/SiteLocation.aspx"><span>Company & Location</span></a></li>
+                                    <li runat="server" id="likProject" visible="false" ><a href="../Project/ProjectList.aspx"><span>Projects</span></a></li> 
+									<li runat="server" id="likLWT" visible="false" ><a href="../Project/LocationWorkTaskAssignmentList.aspx"><span>Location / Work / Assigned Task</span></a></li> 																																								
+                                    <li runat="server" id="likUOM" visible="false" ><a href="../Master/UOM.aspx"><span>UOM</span></a></li>
+                                    <li runat="server" id="likMaterial" visible="false" ><a href="../Master/Material.aspx"><span>Material</span></a></li>
+                                    <li runat="server" id="likVendor" visible="false" ><a href="../Master/VendorList.aspx"><span>Vendor</span></a></li>
+                                    <li runat="server" id="likContractor" visible="false" ><a href="../Master/ContractorList.aspx"><span>Sub Contractor</span></a></li>
+                                    <li runat="server" id="likOther" visible="false" ><a href="../Master/OtherList.aspx"><span>Other</span></a></li>                            
+                                </ul>
+
+                                <div class="item_footer"></div>
+                            </li>
+
+
+                            <li runat="server" class='has-sub mainitem'><a href="#"><i class="glyphicon glyphicon-list"></i><span>Budget</span></a>
+                                <ul>
+                                     <li runat="server"  id="likProjectBudget" visible="false" ><a href="../Budget/ProjectBudgetList.aspx"><span>Project Budgets</span></a></li>
+                                    <li runat="server" id="likBudget" visible="false" ><a href="../Budget/BudgetList.aspx"><span>Monthly Budgets</span></a></li>                                 
+                                    <li runat="server" id="likBudgetModification" visible="false"><a href="../Budget/BudgetModifyRequestList.aspx"><span>Budget Modify Request</span></a></li>
+                                    <li runat="server"  id="li_Local_MRN" visible="false" ><a href="../Budget/Local_MRN_List.aspx"><span>Local MRN Budgets</span></a></li>
+
+                                    <li runat="server" class='has-sub'><a href="#"><span>Reports</span></a>
+                                        <ul>
+                                            <li runat="server" id="likMonthlyBudReport" visible="false" class=""><a href="../Budget/MonthlyBudgetReport.aspx"><span>Monthly Budget</span></a></li>
+                                            <li runat="server" id="likBudgetVarianceReport" visible="false" class=""><a href="../Budget/BudgetVarianceReport.aspx"><span>Budget Variance Report</span></a></li> 
+                                          <li runat="server" id="liMonthlyReportAll" visible="false" class=""><a href="../Budget/MonthlyBudgetAllProjectReport.aspx"><span>Monthly Budget(All) Report</span></a></li> 
+                                        
+                                        </ul>
+                                    </li>
+
+
+                                     <li></li>
+                                </ul>
+
+                                <div class="item_footer"></div>
+                            </li>
+
+                             <li runat="server" class='has-sub mainitem'><a href='#'><i class="glyphicon glyphicon-book"></i><span>Procurement</span></a>
+                                <ul>  <li runat="server" id="likIndent" visible="false"><a href="../Procurement/IndentList.aspx"><span>Indent </span></a>
+                                    </li>
+                                    <li runat="server" id="likQuotation" visible="false" ><a href="../Procurement/QuotationList.aspx"><span>Quotation</span></a>
+                                    </li>                                  
+                                    <li runat="server" id="likQuotationCompar" visible="false" ><a href="../Procurement/QuotationComparisons.aspx"><span>Quotation Comparisons</span></a>
+                                    </li>
+                                    <li runat="server" id="likPO" visible="false" ><a href="../Procurement/PurchaseOrderList.aspx"><span>Purchase Order</span></a>
+                                    </li>
+                                    <li runat="server" id="liRFQ" visible="false" ><a href="../Procurement/RequestForQuotationList.aspx"><span>Request For Quotation</span></a>
+                                    </li>
+                                    <li runat="server" id="likDPO" visible="false" ><a href="../Procurement/DirectPurchaseOrderList.aspx"><span>Direct Purchase Order</span></a>
+                                    </li>
+                                    <li runat="server" id="likWO" visible="false" ><a href="../Procurement/WorkOrderList.aspx"><span>Work Order</span></a>
+                                    </li>
+                                    <li runat="server" id="likWOH" visible="false" ><a href="../Procurement/WorkOrderHireList.aspx"><span>Hire Order</span></a>
+                                    </li>
+                                    <li runat="server" id="likPSO" visible="false" ><a href="../Procurement/ProffessionalServiceOrderList.aspx"><span>Proffessional Service Order</span></a>
+                                    </li>
+                                    <li runat="server" id="liPaymentIndent" visible="false"><a href="../Procurement/PaymentIndentList.aspx"><span>Payment Indent</span></a>
+                                    </li>
+                                    <li runat="server" id="liPaymentIndent_Verification" visible="false"><a href="../Procurement/PaymentIndentList_Verification.aspx"><span>Payment Indent Verification</span></a>
+                                    </li>
+                                    <li runat="server" id="liPaymentIndent_Approval" visible="false"><a href="../Procurement/PaymentIndentList_Approval.aspx"><span>Payment Indent Approval</span></a>
+                                    </li>
+                                    <li runat="server" class='has-sub'><a href="#"><span>Reports</span></a>
+                                        <ul>
+                                            <li runat="server" id="likFReport" visible="false" class=""><a href="../Procurement/Fortnight Report.aspx"><span>Fortnight Report</span></a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <div class="item_footer"></div>
+                            </li>
+
+
+                            <li runat="server" class='has-sub mainitem'><a href='#'><i class="glyphicon glyphicon-file"></i><span>Sub Contractor's Bills</span></a>
+                                <ul>
+                                    <li runat="server" id="li9" ><a href="../SubContractorBills/RateCardList.aspx"><span>Rate Card</span></a>
+
+                                    </li>
+                                    <li runat="server" id="li5" ><a href="../SubContractorBills/NominalMasterRollList.aspx"><span>Nominal Master Roll</span></a>
+
+                                    </li>
+                                    <li runat="server" id="li4" ><a href="../SubContractorBills/DailyProgressReportList.aspx"><span>Daily Progress Report</span></a>
+
+                                    </li>
+                                     <li runat="server" id="li3" ><a href="../SubContractorBills/SC_BillsList.aspx"><span>Generate SC Bill</span></a>
+
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <div class="item_footer"></div>
+                            </li>
+                             <li runat="server" class='has-sub mainitem'><a href='#'><i class="glyphicon glyphicon-file"></i><span>Accounts</span></a>
+                                <ul>
+                                    
+                                    
+                                      <li runat="server" id="li6" ><a href="../Accounts/VendorAccountList.aspx"><span>Vendor</span></a>
+
+                                    </li>
+                                     <li runat="server" id="li7" ><a href="../Accounts/SubContractorAccountList.aspx"><span>Subcontractor</span></a>
+
+                                    </li>
+                                    <li runat="server" id="li8" ><a href="../Accounts/OthersAccountList.aspx"><span>Others</span></a>
+
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <div class="item_footer"></div>
+                            </li>
+
+                            <li runat="server" class='has-sub mainitem'><a href='#'><i class="glyphicon glyphicon-bookmark"></i><span>Inventory</span></a>
+                                <ul>
+                                    
+                                    <li runat="server" id="likMRN" visible="false" ><a href="../Inventory/MRNList.aspx"><span>Material Received Note</span></a>
+
+                                    </li>
+                                    <li runat="server" id="likStock" visible="false"><a href="../Inventory/Stock List.aspx"><span>Stock</span></a>
+
+                                    </li>
+                                      <li runat="server" id="li1" ><a href="../Inventory/StockTransferList.aspx"><span>Stock Transfer</span></a>
+
+                                    </li>
+                                    <li runat="server" id="likMIN" visible="false" ><a href="../Inventory/MINList.aspx"><span>Material Issue Note</span></a>
+
+                                    </li>
+                                    <li runat="server" id="likAgeWiseReport" visible="false" class='has-sub'><a href="#"><span>Reports</span></a>
+                                        <ul>
+                                            <li class=""><a href="../Inventory/AgeWiseReport.aspx"><span>Age Wise Inventory Report</span></a></li>                                          
+                                            <li class=""><a href="../Inventory/InventoryReport.aspx" ><span>Inventory Report</span></a></li>                                          
+
+                                        </ul>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <div class="item_footer"></div>
+                            </li>
+                           
+                            <li runat="server" class='has-sub mainitem'><a href='#'><i class="glyphicon glyphicon-briefcase"></i><span>Asset</span></a>
+                                <ul>
+
+                                    <li runat="server" id="likAssetRegis" visible="false" ><a href="../Asset/AssetRegistrationList.aspx"><span>Asset Registration </span></a>
+                                    </li>
+                                    <li runat="server" id="likAssetTran" visible="false" ><a href="../Asset/AssetMappingToProjectList.aspx"><span>Asset Transfer</span></a>
+                                    </li>
+                                    <li runat="server" id="likDailyRunningHour" visible="false" ><a href="../Asset/DailyMachineRunningHoursList.aspx"><span>Daily Running Hours/Kms </span></a>
+                                    </li>
+
+                                    <li runat="server" class='has-sub'><a href="#"><span>Assets Reports</span></a>
+                                        <ul>
+                                           <%-- <li runat="server" id="likDRHReport" visible="false"><a href="../Asset/MachineRunningHoursKmsReport.aspx"><span>Daily/Monthly Running Hours/Kms</span></a>
+
+                                            </li>
+                                            <li runat="server" id="likDDReport" visible="false" ><a href="../Asset/DieselReport.aspx"><span>Daily/Monthly Diesel Report</span></a>
+
+                                            </li>
+                                            <li runat="server" id="likServiceDetailsReport" visible="false" ><a href="../Asset/ServiceDetailsReport.aspx"><span>Service Details Report</span></a>
+
+                                            </li>--%>
+                                            <li runat="server" id="likPerformanceReport" visible="false" ><a href="../Asset/AssetPerformanceReport.aspx"><span>P&M Performance Report</span></a>
+
+                                            </li>
+                                             <li runat="server" id="li2"  ><a href="../Asset/AssetRecurringVarianceReport.aspx"><span>Asset Recurring Variance Report</span></a>
+
+                                            </li>
+
+                                        </ul>
+                                    </li>
+                                    <li></li>
+                                </ul>
+                                <div class="item_footer"></div>
+                            </li>
+
+                            <li runat="server" class='has-sub mainitem'><a href='#'><i class="glyphicon glyphicon-list-alt"></i><span>Report</span></a>
+                                <ul>
+                                    <li runat="server" id="liPOWORegisterReport"><a href="../Reports/POWORegisterReport.aspx"><span>PO/WO Register Report </span></a>
+                                    </li>
+                                    <li runat="server" id="liNewReport" visible="false" ><a href="../Asset/AssetMappingToProjectList.aspx"><span>Asset Transfer</span></a>
+                                    </li>
+                                    <li runat="server" id="liMRNR"><a href="../Reports/MaterialReceiveNoteReport.aspx"><span>Material Receive Note Report</span></a>
+                                    </li>
+                                </ul>
+                                <div class="item_footer"></div>
+                            </li>
+
+
+                            <li runat="server" class=''>
+                                <div class="item_footer"></div>
+                            </li>
+                        </ul>
+                        <div style="_margin-left: 6px;">
+                            <img src="../Style/Images/menubottom1.png" style="width: 240px; border-bottom-left-radius: 20px;" />
+                        </div>
+
+
+
+                        <!-------------------------------menubar------------------------------------------->
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+            </nav>
+
+            <div id="page-wrapper" style="_box-shadow: 0px 0px 5px black; _background: white">
+
+                <div style="min-height: 500px; padding: 0px 22px;">
+                    <br />
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+
+            </div>
+
+        </div>
+        <footer>
+         
+            &copy; 2021 United Global Corporation Limited. Developed by <a href="http://simpro.co.in/" target="_blank">Simpro Business Solutions Pvt Ltd.</a>
+        </footer>
+    </form>
+
+
+    <script src="../Style/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../Style/bootstrap-3.3.0/dist/js/bootstrap.js"></script>
+    <%--<script src="../Style/js/bootstrap.min.js"></script>--%>
+
+    <!-- Morris Charts JavaScript -->
+
+    <script src="../Style/js/plugins/morris/raphael.min.js"></script>
+    <script src="../Style/js/plugins/morris/morris.min.js"></script>
+    <script src="../Style/js/plugins/morris/morris-data.js"></script>
+    <script src="../Style/js/jquery.limitkeypress.js"></script>
+    <script src="../Style/js/chosen.jquery.js"></script>
+  
+</body>
+</html>
